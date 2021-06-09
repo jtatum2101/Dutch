@@ -1,7 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 
 html {
-    background-color: navy;
+    background-color: #fff;
     font-size: 16px;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -15,10 +15,11 @@ html {
     text-size-adjust: 100%;
 }
 .navbar {
-background-color: #f7f7f7;
+background-color: #fff;
+
 }
 .navbar-item, .navbar-link {
-    color: navy;
+    color: #776D76;
     display: block;
     line-height: 1.5;
     padding: .7rem .95rem;
@@ -26,39 +27,42 @@ background-color: #f7f7f7;
     font-size: 20px;
 }
 .website-section-title {
-color:#FFD700;
+color:#776D76;
 text-align: center;
 font-family: 'Special Elite', cursive;
 font-size: 75px;
 margin-top: 25px;
+margin-left: 25px;
 display: block;
 padding-right: 640px;
+padding-left: 25px;
 padding-top: 85px;
 }
 .website-section-description {
-color:#FFD700;
+color:#776D76;
 text-align: center ;
 font-family: 'Special Elite', cursive;
 font-size: 35px;
 margin-top: 25px;
 display: block;
 padding-right: 620px;
+padding-left: 25px;
 padding-top: 45px;
 }
 h1 {
 display: block;
 }
 a {
-color: navy;
+color: #776D76;
 }
 .button.is-light {
-background-color: #FFD700;
-color: navy;
+background-color: #D7D8D8;
+color: #494e56;
 }
 .button.is-primary {
-    background-color: #00d1b2;
+    background-color: #776D76;
     border-color: transparent;
-    background-color: navy;
-    color: #FFD700;
+    color: #fff;
 }
+
 
