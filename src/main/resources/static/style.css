@@ -29,25 +29,26 @@ background-color: #fff;
 .website-section-title {
 color:#776D76;
 text-align: center;
-font-family: 'Special Elite', cursive;
+font-family: 'Mate SC', serif;
 font-size: 75px;
 margin-top: 25px;
 margin-left: 25px;
 display: block;
 padding-right: 640px;
 padding-left: 25px;
-padding-top: 85px;
+padding-top: 15px;
 }
 .website-section-description {
 color:#776D76;
 text-align: center ;
-font-family: 'Special Elite', cursive;
+font-family: 'Mate SC', serif;
 font-size: 35px;
-margin-top: 25px;
 display: block;
 padding-right: 620px;
 padding-left: 25px;
 padding-top: 45px;
+margin-top: -490px;
+padding-bottom: 50px;
 }
 h1 {
 display: block;
@@ -63,6 +64,41 @@ color: #494e56;
     background-color: #776D76;
     border-color: transparent;
     color: #fff;
+}
+.box {
+margin-top: 100px;
+margin-right: 150px;
+margin-left: 150px;
+margin-bottom: 100px;
+}
+.logo{
+margin-left: 550px;
+margin-top: -230px;
+margin-bottom: 200px;
+position: relative;
+padding-top: 60px;
+}
+.logo-index{
+margin-left: 550px;
+margin-top: -230px;
+margin-bottom: 200px;
+position: relative;
+padding-top: 60px;
+padding-bottom: 150px;
+}
+.welcome-section-description-index{
+margin-bottom: 200px;
+margin-top: -730px;
+color:#776D76;
+text-align: center ;
+font-family: 'Mate SC', serif;
+font-size: 35px;
+display: block;
+padding-right: 620px;
+padding-left: 25px;
+padding-top: 45px;
+margin-top: -490px;
+padding-bottom: 50px;
 }
 
 
