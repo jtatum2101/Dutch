@@ -47,7 +47,7 @@ display: block;
 padding-right: 620px;
 padding-left: 25px;
 padding-top: 45px;
-margin-top: -490px;
+margin-top: -590px;
 padding-bottom: 50px;
 }
 h1 {
@@ -58,7 +58,7 @@ color: #776D76;
 }
 .button.is-light {
 background-color: #D7D8D8;
-color: #494e56;
+color: #776D76;
 }
 .button.is-primary {
     background-color: #776D76;
@@ -96,9 +96,18 @@ font-size: 35px;
 display: block;
 padding-right: 620px;
 padding-left: 25px;
-padding-top: 45px;
-margin-top: -490px;
+padding-top: -200px;
+margin-top: -650px;
 padding-bottom: 50px;
+}
+.button.is-primary:hover {
+background-color: #D7D8D8;
+color: #776D76;
+}
+
+.button.is-light:hover {
+background-color: #776D76;
+color: #fff;
 }
 
 
