@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link type="text/css" href="style.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
-    <title>Husky | Home</title>
-
+    <title>Husky | Sign Up</title>
 </head>
 <body>
 <nav class="navbar is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item">
-            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}"  width="50" height="50">
+            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}" width="50" height="50">
         </a>
-
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -73,12 +71,55 @@
         </div>
     </div>
 </nav>
-<div class="box">
-    <h1 class="website-section-title">What is Husky?</h1>
-    <img class="logo" src="...static/images/huskylogoforwebsite.png" th:src="@{images/huskylogoforwebsite.png}"/>
-    <p class="website-section-description">Husky is a website made to file police reports, as well as updating and
-        deleting reports.
-        Husky is a great way to have records of reports that can be updated and managed! Enjoy!</p>
+<div class="container text-center">
+    <div>
+        <h1>User Registration - Sign Up</h1>
+    </div>
+    <form th:action="@{/register_success}" th:object="${user}"
+          method="post" style="max-width: 600px; margin: 0 auto;">
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-4 col-form-label">E-mail: </label>
+                <div class="col-8">
+                    <input type="email" th:field="*{email}" class="form-control" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Password: </label>
+                <div class="col-8">
+                    <input type="password" th:field="*{password}" class="form-control"
+                           required minlength="6" maxlength="10"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">First Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{firstName}" class="form-control"
+                           required minlength="2" maxlength="20"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Last Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{lastName}" class="form-control"
+                           required minlength="2" maxlength="20" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Username: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{userName}" class="form-control" required minlength="2" maxlength="25"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </form>
 </div>
 </body>
 </html>
