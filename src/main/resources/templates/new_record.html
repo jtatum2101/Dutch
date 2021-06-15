@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link type="text/css" href="style.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Husky | Create A Report</title>
+</head>
+<body>
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}" width="50" height="50">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="http://localhost:8080/home">
+                Home
+            </a>
+        </div>
+
+        <div class="navbar-end">
+
+        </div>
+    </div>
+</nav>
+<div class="box">
+    <h1 class="website-section-title" style="padding-left: 420px;">Create A Report</h1>
+    <form action="#" th:action="@{/save}" th:object="${record}" method="post" style="max-width: 600px; margin: 0 auto;">
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Title: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{title}" class="input is-normal" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Date: </label>
+                <div class="col-8">
+                    <input type="date" th:field="*{date}" class="input is-normal" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Report Number: </label>
+                <div class="col-8">
+                    <input type="number" th:field="*{reportNumber}" class="input is-normal" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Victim's Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{victimName}" class="input is-normal" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspects? </label>
+                <div class="col-8">
+                    <input type="number" th:field="*{hasSuspect}" class="input is-normal" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 1 Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect1Name}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 1 Hair Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect1Hair}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 1 Eye Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect1Eye}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 1 Race: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect1Race}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 2 Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect2Name}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 2 Hair Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect2Hair}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 2 Eye Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect2Eye}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 2 Race: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect2Race}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 3 Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect3Name}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 3 Hair Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect2Hair}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 3 Eye Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect3Eye}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 3 Race: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect3Race}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 4 Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect4Name}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 4 Hair Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect4Hair}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 4 Eye Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect4Eye}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 4 Race: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect4Race}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 5 Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect5Name}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 5 Hair Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect5Hair}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 5 Eye Color: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect5Eye}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 5 Race: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect5Race}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Warrants? </label>
+                <div class="col-8">
+                    <input type="number" th:field="*{hasWarrants}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 1 Warrant Date: </label>
+                <div class="col-8">
+                    <input type="date" th:field="*{suspect1WarrantDate}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 1 Warrant Description: </label>
+                <div class="col-8">
+                    <textarea class="textarea is-normal" placeholder="Describe the encounter..." th:field="*{suspect1WarrantDescription}"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 2 Warrant Date: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect2WarrantDate}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 2 Warrant Description: </label>
+                <div class="col-8">
+                    <textarea class="textarea is-normal" placeholder="Describe the encounter..." th:field="*{suspect2WarrantDescription}"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 3 Warrant Date: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect3WarrantDate}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 3 Warrant Description: </label>
+                <div class="col-8">
+                    <textarea class="textarea is-normal" placeholder="Describe the encounter..." th:field="*{suspect3WarrantDescription}"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 4 Warrant Date: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect4WarrantDate}" class="input is-normal"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 4 Warrant Description: </label>
+                <div class="col-8">
+                    <textarea class="textarea is-normal" placeholder="Describe the encounter..." th:field="*{suspect4WarrantDescription}"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 5 Warrant Date: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{suspect5WarrantDate}" class="input is-normal"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Suspect 5 Warrant Description: </label>
+                <div class="col-8">
+                    <textarea class="textarea is-normal" placeholder="Describe the encounter..." th:field="*{suspect5WarrantDescription}"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Description of the Report: </label>
+                <div class="col-8">
+                    <textarea class="textarea is-normal" placeholder="Describe the encounter..." th:field="*{descriptionOfReport}"></textarea>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="button is-primary" style="margin-top: 10px;">File Report</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

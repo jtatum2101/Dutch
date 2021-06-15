@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <link type="text/css" href="style.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
-    <title>Husky | Home</title>
+    <title>Husky</title>
 
 </head>
 <body>
 <nav class="navbar is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item">
-            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}"  width="50" height="50">
+            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}" width="50" height="50">
         </a>
-
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -27,32 +26,32 @@
             <a class="navbar-item" href="http://localhost:8080/home">
                 Home
             </a>
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div sec:authorize="isAuthenticated()" class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                    Get Started...
+                    <b>[[${#request.userPrincipal.principal.fullName}]]</b>
                 </a>
 
-                <div class="navbar-dropdown">
-                    <a class="navbar-item">
+                <div sec:authorize="isAuthenticated()" class="navbar-dropdown">
+                    <a class="navbar-item" href="http://localhost:8080/new">
                         Create a Report
                     </a>
-                    <a class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" href="http://localhost:8080/viewAll">
                         View All Reports
                     </a>
-                    <a class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
                         View by Date
                     </a>
-                    <a class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
                         View by Report Number
                     </a>
-                    <a class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
                         Update a Report
                     </a>
                     <a class="navbar-item">
                         Delete a Report
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" th:href="@{logout}" class="navbar-item">
                         Log Out
                     </a>
                 </div>
@@ -62,10 +61,10 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-primary" th:href="@{/register}">
+                    <a sec:authorize="isAnonymous()" class="button is-primary" th:href="@{/register}">
                         <strong>Register</strong>
                     </a>
-                    <a class="button is-light" th:href="@{/login}">
+                    <a class="button is-light" sec:authorize="isAnonymous()" th:href="@{/login}">
                         <strong>Log in</strong>
                     </a>
                 </div>
@@ -75,8 +74,8 @@
 </nav>
 <div class="box">
     <h1 class="website-section-title">What is Husky?</h1>
-    <img class="logo" src="...static/images/huskylogoforwebsite.png" th:src="@{images/huskylogoforwebsite.png}"/>
-    <p class="website-section-description">Husky is a website made to file police reports, as well as updating and
+    <img class="logo-index" src="...static/images/huskylogoforwebsite.png" th:src="@{images/huskylogoforwebsite.png}"/>
+    <p class="website-section-description" style="margin-top: -690px;">Husky is a website made to file police reports, as well as updating and
         deleting reports.
         Husky is a great way to have records of reports that can be updated and managed! Enjoy!</p>
 </div>

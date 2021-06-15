@@ -22,39 +22,9 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="http://localhost:8080/home">
+            <a class="navbar-item" href="http://localhost:8080">
                 Home
             </a>
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    Get Started...
-                </a>
-
-                <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                        Create a Report
-                    </a>
-                    <a class="navbar-item">
-                        View All Reports
-                    </a>
-                    <a class="navbar-item">
-                        View by Date
-                    </a>
-                    <a class="navbar-item">
-                        View by Report Number
-                    </a>
-                    <a class="navbar-item">
-                        Update a Report
-                    </a>
-                    <a class="navbar-item">
-                        Delete a Report
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                        Log Out
-                    </a>
-                </div>
-            </div>
         </div>
 
         <div class="navbar-end">
@@ -89,7 +59,7 @@
                 <label class="col-4 col-form-label">Password: </label>
                 <div class="col-8">
                     <input type="password" th:field="*{password}" class="input is-normal"
-                           required minlength="6" maxlength="10"/>
+                           required minlength="6" maxlength="20"/>
                 </div>
             </div>
 
