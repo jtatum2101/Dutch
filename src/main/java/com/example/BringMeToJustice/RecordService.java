@@ -20,7 +20,7 @@ public class RecordService {
         repo.save(record);
     }
 
-    public List<Records> findByTitle(String title) {
+    public List<Records> findRecordByTitle(String title) {
         return repo.findByTitle(title);
     }
 

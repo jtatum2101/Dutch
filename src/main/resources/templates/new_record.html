@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <link type="text/css" href="style.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
@@ -12,7 +11,7 @@
 <nav class="navbar is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item">
-            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}" width="50" height="50">
+            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}"  width="50" height="50">
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -23,19 +22,58 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="http://localhost:8080/home">
+            <a class="navbar-item" sec:authorize="isAuthenticated()" href="http://localhost:8080/home">
                 Home
             </a>
+            <div sec:authorize="isAuthenticated()" class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+                </a>
+
+                <div sec:authorize="isAuthenticated()" class="navbar-dropdown">
+                    <a class="navbar-item" href="/new">
+                        Create a Report
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" href="/viewAll">
+                        View All Reports
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                        View by Date
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                        View by Report Number
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                        Update a Report
+                    </a>
+                    <a class="navbar-item">
+                        Delete a Report
+                    </a>
+                    <hr class="navbar-divider">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                        Log Out
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="navbar-end">
-
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a sec:authorize="isAnonymous()" class="button is-primary" th:href="@{/register}">
+                        <strong>Register</strong>
+                    </a>
+                    <a class="button is-light" sec:authorize="isAnonymous()" th:href="@{/login}">
+                        <strong>Log in</strong>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
 <div class="box">
-    <h1 class="website-section-title" style="padding-left: 420px;">Create A Report</h1>
-    <form action="#" th:action="@{/save}" th:object="${record}" method="post" style="max-width: 600px; margin: 0 auto;">
+    <h1 class="website-section-title" style="padding-left: 400px;">Create A Report</h1>
+    <form th:action="@{/save}" th:object="${record}" method="post" style="max-width: 600px; margin: 0 auto;">
         <div class="m-3">
             <div class="form-group row">
                 <label class="col-4 col-form-label">Title: </label>

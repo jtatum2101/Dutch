@@ -1,57 +1,91 @@
 package com.example.BringMeToJustice;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "records")
 public class Records {
-    private Long id;
-    private String title;
-    private String date;
-    private int reportNumber;
-    private String victimName;
-    private boolean hasSuspect;
-    private String suspect1Name;
-    private String suspect1Hair;
-    private String suspect1Eye;
-    private String suspect1Race;
-    private String suspect2Name;
-    private String suspect2Hair;
-    private String suspect2Eye;
-    private String suspect2Race;
-    private String suspect3Name;
-    private String suspect3Hair;
-    private String suspect3Eye;
-    private String suspect3Race;
-    private String suspect4Name;
-    private String suspect4Hair;
-    private String suspect4Eye;
-    private String suspect4Race;
-    private String suspect5Name;
-    private String suspect5Hair;
-    private String suspect5Eye;
-    private String suspect5Race;
-    private boolean hasWarrants;
-    private String whoHasWarrants;
-    private String suspect1WarrantDate;
-    private String suspect1WarrantDescription;
-    private String suspect2WarrantDate;
-    private String suspect2WarrantDescription;
-    private String suspect3WarrantDate;
-    private String suspect3WarrantDescription;
-    private String suspect4WarrantDate;
-    private String suspect4WarrantDescription;
-    private String suspect5WarrantDate;
-    private String suspect5WarrantDescription;
-    private String descriptionOfReport;
-
-    protected Records() {
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "title", nullable = false, unique = true, length = 100)
+    private String title;
+    @Column(name = "date", nullable = false, length = 10)
+    private String date;
+    @Column(name = "report_number", nullable = false)
+    private int reportNumber;
+    @Column(name = "victim_name", nullable = false, length = 80)
+    private String victimName;
+    @Column(name = "has_suspect", nullable = false)
+    private boolean hasSuspect;
+    @Column(name = "suspect1name")
+    private String suspect1Name;
+    @Column(name = "suspect1hair")
+    private String suspect1Hair;
+    @Column(name = "suspect1eye")
+    private String suspect1Eye;
+    @Column(name = "suspect1race")
+    private String suspect1Race;
+    @Column(name = "suspect2name")
+    private String suspect2Name;
+    @Column(name = "suspect2hair")
+    private String suspect2Hair;
+    @Column(name = "suspect2eye")
+    private String suspect2Eye;
+    @Column(name = "suspect2race")
+    private String suspect2Race;
+    @Column(name = "suspect3name")
+    private String suspect3Name;
+    @Column(name = "suspect3hair")
+    private String suspect3Hair;
+    @Column(name = "suspect3eye")
+    private String suspect3Eye;
+    @Column(name = "suspect3race")
+    private String suspect3Race;
+    @Column(name = "suspect4name")
+    private String suspect4Name;
+    @Column(name = "suspect4hair")
+    private String suspect4Hair;
+    @Column(name = "suspect4eye")
+    private String suspect4Eye;
+    @Column(name = "suspect4race")
+    private String suspect4Race;
+    @Column(name = "suspect5name")
+    private String suspect5Name;
+    @Column(name = "suspect5hair")
+    private String suspect5Hair;
+    @Column(name = "suspect5eye")
+    private String suspect5Eye;
+    @Column(name = "suspect5race")
+    private String suspect5Race;
+    @Column(name = "has_warrants")
+    private boolean hasWarrants;
+    @Column(name = "who_has_warrants")
+    private String whoHasWarrants;
+    @Column(name = "suspect1warrant_date", length = 10)
+    private String suspect1WarrantDate;
+    @Column(name = "suspect1warrant_description")
+    private String suspect1WarrantDescription;
+    @Column(name = "suspect2warrant_date", length = 10)
+    private String suspect2WarrantDate;
+    @Column(name = "suspect2warrant_description")
+    private String suspect2WarrantDescription;
+    @Column(name = "suspect3warrant_date", length = 10)
+    private String suspect3WarrantDate;
+    @Column(name = "suspect3warrant_description")
+    private String suspect3WarrantDescription;
+    @Column(name = "suspect4warrant_date", length = 10)
+    private String suspect4WarrantDate;
+    @Column(name = "suspect4warrant_description")
+    private String suspect4WarrantDescription;
+    @Column(name = "suspect5warrant_date", length = 10)
+    private String suspect5WarrantDate;
+    @Column(name = "suspect5warrant_description")
+    private String suspect5WarrantDescription;
+    @Column(name = "description_of_report")
+    private String descriptionOfReport;
+
+
     public Long getId() {
         return id;
 

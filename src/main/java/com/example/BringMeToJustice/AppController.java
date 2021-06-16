@@ -1,7 +1,5 @@
 package com.example.BringMeToJustice;
 
-
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -9,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class AppController {
@@ -25,6 +22,7 @@ public class AppController {
         model.addAttribute("user", new Users());
         return "register";
     }
+
     @PostMapping("/register_success")
     public String processRegister(Users user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -35,6 +33,7 @@ public class AppController {
 
         return "register_success";
     }
+
     @GetMapping("/users")
     public String listUsers(Model model) {
         List<Users> listUsers = userRepo.findAll();
@@ -42,8 +41,10 @@ public class AppController {
 
         return "users";
     }
+
     @Autowired
     private RecordService service;
+
     @RequestMapping("/viewAll")
     public String viewAllPage(Model model) {
         List<Records> listRecords = service.listAll();
@@ -51,21 +52,23 @@ public class AppController {
 
         return "viewAll";
     }
+
     @RequestMapping("/new")
-    public String showNewRecordPage(Model model){
+    public String showNewRecordPage(Model model) {
         Records record = new Records();
         model.addAttribute("record", record);
         return "new_record";
     }
+
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveProduct(@ModelAttribute("record") Records record) {
         service.save(record);
 
         return "redirect:/";
     }
-    @GetMapping("/{title}/details")
-    @ResponseBody
-    public String getRecordByTitle(@PathVariable("title") String title, Model model){
+
+    @GetMapping("{title}/details")
+    public String getRecordByTitle(@PathVariable("title") String title, Model model) {
         List<Records> record = recordsRepo.findByTitle(title);
         model.addAttribute("record", record);
         return "record_details";
