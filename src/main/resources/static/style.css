@@ -109,5 +109,17 @@ color: #776D76;
 background-color: #776D76;
 color: #fff;
 }
-
+.website-section-title-details {
+color:#776D76;
+text-align: center;
+font-family: 'Mate SC', serif;
+font-size: 20px;
+margin-top: 25px;
+margin-left: 25px;
+display: block;
+padding-right: 640px;
+padding-left: 25px;
+padding-top: 15px;
+height: auto;
+}
 

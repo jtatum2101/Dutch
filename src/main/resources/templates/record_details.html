@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<link type="text/css" href="style.css" rel="stylesheet">
+<link type="text/css" th:href="@{/style.css}" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <title>Husky | Record Details</title>
 </head>
-<body th:object="${record}">
+<body>
 <nav class="navbar is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item">
-            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}" width="50" height="50">
+            <img th:src="@{/images/smallicon.png}" width="50" height="50">
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -71,8 +71,49 @@
         </div>
     </div>
 </nav>
-<h1 th:text="${record.title}">Title: </h1>
+<div class="container" align="center">
+    <form align="center" class="box" th:object="${record}">
+        <h1 th:text="${record.title}" align="center" class="website-section-title-details">Title: </h1>
+        <h3 th:text="${record.date}" align="center" class="website-section-title-details">Date: </h3>
+        <h3 th:text="${record.reportNumber}" align="center" class="website-section-title-details">Report Number: </h3>
+        <h3 th:text="${record.victimName}" align="center" class="website-section-title-details">Victim's Name:</h3>
+        <h3 th:text="${record.hasSuspect}" align="center" class="website-section-title-details">Suspects?</h3>
+        <h3 th:text="${record.suspect1Name}" align="center" class="website-section-title-details">Suspect1 Name: </h3>
+        <h3 th:text="${record.suspect1Hair}" align="center" class="website-section-title-details">Suspect1 Hair: </h3>
+        <h3 th:text="${record.suspect1Eye}" align="center" class="website-section-title-details">Suspect1 Eye: </h3>
+        <h3 th:text="${record.suspect1Race}" align="center" class="website-section-title-details">Suspect1 Race: </h3>
+        <h3 th:text="${record.suspect2Name}" align="center" class="website-section-title-details">Suspect2 Name:</h3>
+        <h3 th:text="${record.suspect2Hair}" align="center" class="website-section-title-details">Suspect2 Hair:</h3>
+        <h3 th:text="${record.suspect2Eye}" align="center" class="website-section-title-details">Suspect2 Eye:</h3>
+        <h3 th:text="${record.suspect2Race}" align="center" class="website-section-title-details">Suspect2 Race:</h3>
+        <h3 th:text="${record.suspect3Name}" align="center" class="website-section-title-details">Suspect3 Name:</h3>
+        <h3 th:text="${record.suspect3Hair}" align="center" class="website-section-title-details">Suspect3 Hair:</h3>
+        <h3 th:text="${record.suspect3Eye}" align="center" class="website-section-title-details">Suspect3 Eye:</h3>
+        <h3 th:text="${record.suspect3Race}" align="center" class="website-section-title-details">Suspect3 Race:</h3>
+        <h3 th:text="${record.suspect4Name}" align="center" class="website-section-title-details">Suspect4 Name:</h3>
+        <h3 th:text="${record.suspect4Hair}" align="center" class="website-section-title-details">Suspect4 Hair:</h3>
+        <h3 th:text="${record.suspect4Eye}" align="center" class="website-section-title-details">Suspect4 Eye:</h3>
+        <h3 th:text="${record.suspect4Race}" align="center" class="website-section-title-details">Suspect4 Race:</h3>
+        <h3 th:text="${record.suspect5Name}" align="center" class="website-section-title-details">Suspect5 Name:</h3>
+        <h3 th:text="${record.suspect5Hair}" align="center" class="website-section-title-details">Suspect5 Hair:</h3>
+        <h3 th:text="${record.suspect5Eye}" align="center" class="website-section-title-details">Suspect5 Eye:</h3>
+        <h3 th:text="${record.suspect5Race}" align="center" class="website-section-title-details">Suspect5 Race:</h3>
+        <h3 th:text="${record.hasWarrants}" align="center" class="website-section-title-details">Warrants?</h3>
+        <h3 th:text="${record.whoHasWarrants}" align="center" class="website-section-title-details">Who has Warrants:</h3>
+        <h3 th:text="${record.suspect1WarrantDate}" align="center" class="website-section-title-details">Suspect1 Warrant Date:</h3>
+        <h3 th:text="${record.suspect1WarrantDescription}" align="center" class="website-section-title-details">Suspect1 Warrant Description:</h3>
+        <h3 th:text="${record.suspect2WarrantDate}" align="center" class="website-section-title-details">Suspect2 Warrant Date:</h3>
+        <h3 th:text="${record.suspect2WarrantDescription}" align="center" class="website-section-title-details">Suspect2 Warrant Description: </h3>
+        <h3 th:text="${record.suspect3WarrantDate}" align="center" class="website-section-title-details">Suspect3 Warrant Date :</h3>
+        <h3 th:text="${record.suspect3WarrantDescription}" align="center" class="website-section-title-details">Suspect3 Warrant Description:</h3>
+        <h3 th:text="${record.suspect4WarrantDate}" align="center" class="website-section-title-details">Suspect4  Warrant Date:</h3>
+        <h3 th:text="${record.suspect4WarrantDescription}" align="center" class="website-section-title-details">Suspect4 Warrant Description:</h3>
+        <h3 th:text="${record.suspect5WarrantDate}" align="center" class="website-section-title-details">Suspect5  Warrant Date:</h3>
+        <h3 th:text="${record.suspect5WarrantDescription}" align="center" class="website-section-title-details">Suspect5  Warrant Description:</h3>
+        <h3 th:text="${record.descriptionOfReport}" align="center" class="website-section-title-details">Report Description:</h3>
 
+    </form>
+</div>
 
 </body>
 </html>

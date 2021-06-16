@@ -74,5 +74,20 @@ public class AppController {
         return "record_details";
     }
 
+    @GetMapping("/searchByDate")
+    public List<Records> searchingRecordByTitle(String date) {
+        if (date != null) {
+            return recordsRepo.findByDate(date);
+        }
+        return recordsRepo.findAll();
+    }
+
+    @RequestMapping("/found_report_by_date")
+    public String viewByDatePage(@PathVariable("date") String date, Model model) {
+        List<Records> listOfRecordDate = recordsRepo.findByDate(date);
+        model.addAttribute("listOfRecordDate", listOfRecordDate);
+        return "found_report_by_date";
+    }
+
 
 }
