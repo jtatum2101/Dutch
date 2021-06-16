@@ -9,6 +9,69 @@
     <title>Husky | All Reports</title>
 </head>
 <body>
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="...static/images/Hnet.com-image.png" th:src="@{images/Hnet.com-image.png}" width="50" height="50">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" sec:authorize="isAuthenticated()" href="http://localhost:8080/home">
+                Home
+            </a>
+            <div sec:authorize="isAuthenticated()" class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+                </a>
+
+                <div sec:authorize="isAuthenticated()" class="navbar-dropdown">
+                    <a class="navbar-item" href="/new">
+                        Create a Report
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" href="/viewAll">
+                        View All Reports
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                        View by Date
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                        View by Report Number
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                        Update a Report
+                    </a>
+                    <a class="navbar-item">
+                        Delete a Report
+                    </a>
+                    <hr class="navbar-divider">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                        Log Out
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a sec:authorize="isAnonymous()" class="button is-primary" th:href="@{/register}">
+                        <strong>Register</strong>
+                    </a>
+                    <a class="button is-light" sec:authorize="isAnonymous()" th:href="@{/login}">
+                        <strong>Log in</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
 <div class="table is-narrowed is-bordered" align="center" style="margin-top:150px;">
     <div class="table-container is-narrowed" align="center">
         <h1>Records</h1>

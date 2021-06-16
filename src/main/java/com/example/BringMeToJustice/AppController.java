@@ -69,7 +69,7 @@ public class AppController {
 
     @GetMapping("{title}/details")
     public String getRecordByTitle(@PathVariable("title") String title, Model model) {
-        List<Records> record = recordsRepo.findByTitle(title);
+        Records record = recordsRepo.findByTitle(title);
         model.addAttribute("record", record);
         return "record_details";
     }

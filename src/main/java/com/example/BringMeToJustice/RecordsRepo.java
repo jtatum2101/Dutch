@@ -11,7 +11,7 @@ import java.util.Map;
 
 public interface RecordsRepo extends JpaRepository<Records, Long> {
     @Query(value = "SELECT * FROM Records r WHERE r.title =?1", nativeQuery = true)
-    List<Records> findByTitle(String title);
+    Records findByTitle(String title);
     @Query(value = "SELECT * FROM Records r WHERE r.date =?1", nativeQuery = true)
     List<Records> findByDate(String date);
     @Query(value = "SELECT * FROM Records r WHERE r.report_number =?1", nativeQuery = true)
