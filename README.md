@@ -14,8 +14,8 @@
 - There will be a database that holds the user's information.
 - There will be a database that will hold the records' information.
 - Each page that is given a task will be connected to the database once the user is logged in.
-- If the user has an account, they will be able to have access to all the reports or reports by the search of date or report number.
-- The request for a report will search in the database and display the information to the user.
+- If the user has an account, they will be able to have access to all the reports and can go to a detail page for each record.
+- The details for a report will be found in the database and display the information to the user.
 
 ## MileStone 3 (6/25):
 ### Things to get done during this time period:
