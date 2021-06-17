@@ -25,8 +25,10 @@ public class RecordService {
     }
 
     public List<Records> findByDate(String date) {
-        return repo.findByDate(date);
-
+        if(date != null){
+            return repo.findByDate(date);
+        }
+        return repo.findAll();
     }
 
     public List<Records> findReportNumber(int reportNumber) {

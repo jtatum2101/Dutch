@@ -1,6 +1,7 @@
 package com.example.BringMeToJustice;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -75,19 +76,21 @@ public class AppController {
     }
 
     @GetMapping("/searchByDate")
-    public List<Records> searchingRecordByTitle(String date) {
-        if (date != null) {
-            return recordsRepo.findByDate(date);
-        }
-        return recordsRepo.findAll();
-    }
+    public String searchingRecordByTitle() {
 
-    @RequestMapping("/found_report_by_date")
-    public String viewByDatePage(@PathVariable("date") String date, Model model) {
-        List<Records> listOfRecordDate = recordsRepo.findByDate(date);
-        model.addAttribute("listOfRecordDate", listOfRecordDate);
+        return "searchByDate";
+    }
+    @GetMapping("/found_report_by_date")
+    public String viewByDatePage(@RequestParam(name = "date", required = false) String date, Model model) {
+        if(date != null){
+            model.addAttribute("listRecords", recordsRepo.findByDate(date));
+        }else{
+            model.addAttribute("listRecords", recordsRepo.findAll());
+        }
+        System.out.print(date);
         return "found_report_by_date";
     }
+
 
 
 }
