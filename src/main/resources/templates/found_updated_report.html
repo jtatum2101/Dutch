@@ -74,7 +74,7 @@
 </nav>
 <div class="box">
     <h1 class="website-section-title" style="padding-left: 420px;">Update A Report</h1>
-    <form th:action="@{/save}" th:object="${record}" method="post" style="max-width: 600px; margin: 0 auto;">
+    <form th:action="@{/save/{title}(title=${record.title})}" th:object="${record}" method="post" style="max-width: 600px; margin: 0 auto;">
         <div class="m-3">
             <div class="form-group row">
                 <label class="col-4 col-form-label">Date: </label>

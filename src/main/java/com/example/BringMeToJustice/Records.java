@@ -82,7 +82,7 @@ public class Records {
     private String suspect5WarrantDate;
     @Column(name = "suspect5warrant_description")
     private String suspect5WarrantDescription;
-    @Column(name = "description_of_report")
+    @Column(name = "description_of_report", nullable = false)
     private String descriptionOfReport;
 
 

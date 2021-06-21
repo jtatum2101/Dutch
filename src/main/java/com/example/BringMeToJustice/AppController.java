@@ -125,4 +125,11 @@ public class AppController {
         return "found_updated_report";
 
     }
+
+    @RequestMapping(value = "/save/{title}", method = RequestMethod.POST)
+    public String updatingRecord(@PathVariable("title") String title, Records record) {
+        service.updateRecord(title, record);
+
+        return "redirect:/";
+    }
 }
