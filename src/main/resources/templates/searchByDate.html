@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:margin="http://www.w3.org/1999/xhtml" xmlns:max-width="http://www.w3.org/1999/xhtml">
 <link type="text/css" href="style.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
@@ -74,13 +75,13 @@
 </nav>
 <div class="m-3">
     <div class="form-group row">
-        <label class="col-4 col-form-label website-section-title" style="padding-left: 420px;">Date Of Report: </label>
+        <label class="col-4 col-form-label website-section-title" style="max-width: 600px; margin: 0 auto;">Date Of Report: </label>
         <div class="col-8">
-            <input id="dateInput" type="text" class="input is-normal" required/>
+            <input id="dateInput" type="text" class="input is-normal" style="max-width: 600px; margin: auto; margin-left: 250px;" required/>
         </div>
     </div>
     <div>
-        <button id="submitButton" class="button is-primary" style="margin-top: 10px;">Search for File</button>
+        <button id="submitButton" class="button is-primary" style="margin-top: 10px; margin-left: 250px;">Search for File</button>
     </div>
 </div>
 
