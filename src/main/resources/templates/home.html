@@ -41,6 +41,9 @@
                     <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByDate}">
                         View by Date
                     </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByReportNum}">
+                        View by Report Number
+                    </a>
                     <a sec:authorize="isAuthenticated()" class="navbar-item">
                         Update a Report
                     </a>

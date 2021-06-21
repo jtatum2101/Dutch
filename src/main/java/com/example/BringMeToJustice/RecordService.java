@@ -32,7 +32,11 @@ public class RecordService {
     }
 
     public List<Records> findReportNumber(int reportNumber) {
-        return repo.findByReportNumber(reportNumber);
+        if(reportNumber != 0){
+            return repo.findByReportNumber(reportNumber);
+        }
+        return repo.findAll();
+
     }
 
     public int deleteByTitle(String title) {

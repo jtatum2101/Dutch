@@ -90,6 +90,20 @@ public class AppController {
         System.out.print(date);
         return "found_report_by_date";
     }
+    @GetMapping("/searchByReportNum")
+    public String searchingReportByReportNumber(){
+        return "searchByReportNum";
+    }
+    @GetMapping("/found_report_by_report_num")
+    public String viewByNumPage(@RequestParam(name = "reportNum", required = false) Integer reportNumber, Model model) {
+        if(reportNumber != 0) {
+            model.addAttribute("listRecords", recordsRepo.findByReportNumber(reportNumber));
+        }else{
+            model.addAttribute("listRecords", recordsRepo.findAll());
+        }
+        System.out.print(reportNumber);
+        return "found_report_by_report_num";
+    }
 
 
 

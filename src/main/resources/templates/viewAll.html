@@ -38,8 +38,11 @@
                     <a sec:authorize="isAuthenticated()" class="navbar-item" href="/viewAll">
                         View All Reports
                     </a>
-                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByDate}">
                         View by Date
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByReportNum}">
+                        View by Report Number
                     </a>
                     <a sec:authorize="isAuthenticated()" class="navbar-item">
                         Update a Report
@@ -71,7 +74,7 @@
 </nav>
 <div class="table is-narrowed is-bordered" align="center" style="margin-top:150px;">
     <div class="table-container is-narrowed" align="center">
-        <h1>Records</h1>
+        <h1 class="website-section-title" style="padding-left: 420px;">Records</h1>
         <br/><br/>
 
         <table class="table" align="center">
@@ -80,40 +83,6 @@
                 <th>Title</th>
                 <th>Date</th>
                 <th>Report Number</th>
-                <!--                <th>Victim's Name</th>-->
-                <!--                <th>Suspect?</th>-->
-                <!--                <th>S1Name</th>-->
-                <!--                <th>S1Hair</th>-->
-                <!--                <th>S1Eye</th>-->
-                <!--                <th>S1Race</th>-->
-                <!--                <th>S2Name</th>-->
-                <!--                <th>S2Hair</th>-->
-                <!--                <th>S2Eye</th>-->
-                <!--                <th>S2Race</th>-->
-                <!--                <th>S3Name</th>-->
-                <!--                <th>S3Hair</th>-->
-                <!--                <th>S3Eye</th>-->
-                <!--                <th>S3Race</th>-->
-                <!--                <th>S4Name</th>-->
-                <!--                <th>S4Hair</th>-->
-                <!--                <th>S4Eye</th>-->
-                <!--                <th>S4Race</th>-->
-                <!--                <th>S5Name</th>-->
-                <!--                <th>S5Hair</th>-->
-                <!--                <th>S5Eye</th>-->
-                <!--                <th>S5Race</th>-->
-                <!--                <th>Warrants?</th>-->
-                <!--                <th>Who has warrants?</th>-->
-                <!--                <th>S1WarrantDate</th>-->
-                <!--                <th>S1WarrantDescription</th>-->
-                <!--                <th>S2WarrantDate</th>-->
-                <!--                <th>S2WarrantDescription</th>-->
-                <!--                <th>S3WarrantDate</th>-->
-                <!--                <th>S3WarrantDescription</th>-->
-                <!--                <th>S4WarrantDate</th>-->
-                <!--                <th>S4WarrantDescription</th>-->
-                <!--                <th>S5WarrantDate</th>-->
-                <!--                <th>S5WarrantDescription</th>-->
             </tr>
             </thead>
             <tbody>
@@ -121,41 +90,6 @@
                 <td><a th:text="${record.title}" th:href="@{/{title}/details(title=${record.title})}">Title</a></td>
                 <td th:text="${record.date}">Date</td>
                 <td th:text="${record.reportNumber}">Report Number</td>
-                <!--                <td th:text="${record.victimName}">Victim's Name</td>-->
-                <!--                <td th:text="${record.hasSuspect}">Suspect?</td>-->
-                <!--                <td th:text="${record.suspect1Name}">S1 Name:</td>-->
-                <!--                <td th:text="${record.suspect1Hair}">S1 Hair Color:</td>-->
-                <!--                <td th:text="${record.suspect1Eye}">S1 Eye Color:</td>-->
-                <!--                <td th:text="${record.suspect1Race}">S1 Race:</td>-->
-                <!--                <td th:text="${record.suspect2Name}">S2 Name:</td>-->
-                <!--                <td th:text="${record.suspect2Hair}">S2 Hair Color:</td>-->
-                <!--                <td th:text="${record.suspect2Eye}">S2 Eye Color:</td>-->
-                <!--                <td th:text="${record.suspect2Race}">S2 Race:</td>-->
-                <!--                <td th:text="${record.suspect3Name}">S3 Name:</td>-->
-                <!--                <td th:text="${record.suspect3Hair}">S3 Hair Color:</td>-->
-                <!--                <td th:text="${record.suspect3Eye}">S3 Eye Color:</td>-->
-                <!--                <td th:text="${record.suspect3Race}">S3 Race:</td>-->
-                <!--                <td th:text="${record.suspect4Name}">S4 Name:</td>-->
-                <!--                <td th:text="${record.suspect4Hair}">S4 Hair Color:</td>-->
-                <!--                <td th:text="${record.suspect4Eye}">S4 Eye Color:</td>-->
-                <!--                <td th:text="${record.suspect4Race}">S4 Race:</td>-->
-                <!--                <td th:text="${record.suspect5Name}">S5 Name:</td>-->
-                <!--                <td th:text="${record.suspect5Hair}">S5 Hair Color:</td>-->
-                <!--                <td th:text="${record.suspect5Eye}">S5 Eye Color:</td>-->
-                <!--                <td th:text="${record.suspect5Race}">S5 Race:</td>-->
-                <!--                <td th:text="${record.hasWarrants}">Warrants?</td>-->
-                <!--                <td th:text="${record.whoHasWarrants}">Who has warrants?</td>-->
-                <!--                <td th:text="${record.suspect1WarrantDate}">S1 Warrant Date:</td>-->
-                <!--                <td th:text="${record.suspect1WarrantDescription}">S1 Warrant Description:</td>-->
-                <!--                <td th:text="${record.suspect2WarrantDate}">S2 Warrant Date:</td>-->
-                <!--                <td th:text="${record.suspect2WarrantDescription}">S2 Warrant Description:</td>-->
-                <!--                <td th:text="${record.suspect3WarrantDate}">S3 Warrant Date:</td>-->
-                <!--                <td th:text="${record.suspect3WarrantDescription}">S3 Warrant Description:</td>-->
-                <!--                <td th:text="${record.suspect4WarrantDate}">S4 Warrant Date:</td>-->
-                <!--                <td th:text="${record.suspect4WarrantDescription}">S4 Warrant Description:</td>-->
-                <!--                <td th:text="${record.suspect5WarrantDate}">S5 Warrant Date:</td>-->
-                <!--                <td th:text="${record.suspect5WarrantDescription}">S5 Warrant Description:</td>-->
-
             </tr>
             </tbody>
         </table>

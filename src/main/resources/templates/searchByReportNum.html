@@ -3,10 +3,10 @@
 <link type="text/css" href="style.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
-<script th:src="@{/js/script.js}" defer></script>
+<script th:src="@{/js/reportNumSearch.js}" defer></script>
 <head>
     <meta charset="UTF-8">
-    <title>Husky | Search By Date</title>
+    <title>Husky | Search By Report Number</title>
 </head>
 <body>
 <nav class="navbar is-black" role="navigation" aria-label="main navigation">
@@ -74,15 +74,15 @@
 </nav>
 <div class="m-3">
     <div class="form-group row">
-        <label class="col-4 col-form-label website-section-title" style="padding-left: 420px;">Date Of Report: </label>
+        <label class="col-4 col-form-label website-section-title" style="padding-left: 420px;">Number Of
+            Report: </label>
         <div class="col-8">
-            <input id="dateInput" type="text" class="input is-normal" required/>
+            <input id="reportNumInput" type="text" class="input is-normal" required/>
         </div>
     </div>
     <div>
-        <button id="submitButton" class="button is-primary" style="margin-top: 10px;">Search for File</button>
+        <button id="reportNumSubmit" class="button is-primary" style="margin-top: 10px;">Search for File</button>
     </div>
 </div>
-
 </body>
 </html>

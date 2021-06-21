@@ -37,8 +37,11 @@
                     <a sec:authorize="isAuthenticated()" class="navbar-item" href="/viewAll">
                         View All Reports
                     </a>
-                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByDate}">
                         View by Date
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByReportNum}">
+                        View by Report Number
                     </a>
                     <a sec:authorize="isAuthenticated()" class="navbar-item">
                         Update a Report
@@ -69,7 +72,7 @@
     </div>
 </nav>
 <div class="box">
-    <h1 class="website-section-title" style="padding-left: 400px;">Create A Report</h1>
+    <h1 class="website-section-title" style="padding-left: 420px;">Create A Report</h1>
     <form th:action="@{/save}" th:object="${record}" method="post" style="max-width: 600px; margin: 0 auto;">
         <div class="m-3">
             <div class="form-group row">
