@@ -398,4 +398,5 @@ public class Records {
     public void setDescriptionOfReport(String descriptionOfReport) {
         this.descriptionOfReport = descriptionOfReport;
     }
+
 }

@@ -80,31 +80,49 @@ public class AppController {
 
         return "searchByDate";
     }
+
     @GetMapping("/found_report_by_date")
     public String viewByDatePage(@RequestParam(name = "date", required = false) String date, Model model) {
-        if(date != null){
+        if (date != null) {
             model.addAttribute("listRecords", recordsRepo.findByDate(date));
-        }else{
+        } else {
             model.addAttribute("listRecords", recordsRepo.findAll());
         }
         System.out.print(date);
         return "found_report_by_date";
     }
+
     @GetMapping("/searchByReportNum")
-    public String searchingReportByReportNumber(){
+    public String searchingReportByReportNumber() {
         return "searchByReportNum";
     }
+
     @GetMapping("/found_report_by_report_num")
     public String viewByNumPage(@RequestParam(name = "reportNum", required = false) Integer reportNumber, Model model) {
-        if(reportNumber != 0) {
+        if (reportNumber != 0) {
             model.addAttribute("listRecords", recordsRepo.findByReportNumber(reportNumber));
-        }else{
+        } else {
             model.addAttribute("listRecords", recordsRepo.findAll());
         }
         System.out.print(reportNumber);
         return "found_report_by_report_num";
     }
 
+    @GetMapping("/updateByTitle")
+    public String updatingReportByTitle() {
+        return "updateByTitle";
+    }
 
+    @GetMapping("/found_updated_report")
+    public String updatedByTitlePage(@RequestParam(name = "title", required = false) String title, Model model) {
+        if (title != null) {
+            model.addAttribute("record", recordsRepo.findByTitle(title));
 
+        } else {
+            return "record_not_exist";
+        }
+        System.out.println(title);
+        return "found_updated_report";
+
+    }
 }

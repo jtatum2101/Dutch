@@ -20,10 +20,6 @@ public class RecordService {
         repo.save(record);
     }
 
-    public Records findRecordByTitle(String title) {
-        return repo.findByTitle(title);
-    }
-
     public List<Records> findByDate(String date) {
         if(date != null){
             return repo.findByDate(date);

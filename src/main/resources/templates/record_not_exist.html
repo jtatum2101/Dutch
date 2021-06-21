@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link type="text/css" href="style.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Registration Success</title>
-    <link type="text/css" href="style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Husky | Record Not Found!</title>
+
 </head>
 <body>
 <nav class="navbar is-black" role="navigation" aria-label="main navigation">
@@ -22,7 +23,7 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" sec:authorize="isAuthenticated()" href="http://localhost:8080/home">
+            <a class="navbar-item" href="http://localhost:8080/home">
                 Home
             </a>
             <div sec:authorize="isAuthenticated()" class="navbar-item has-dropdown is-hoverable">
@@ -31,10 +32,10 @@
                 </a>
 
                 <div sec:authorize="isAuthenticated()" class="navbar-dropdown">
-                    <a class="navbar-item" href="/new">
+                    <a class="navbar-item" href="http://localhost:8080/new">
                         Create a Report
                     </a>
-                    <a sec:authorize="isAuthenticated()" class="navbar-item" href="/viewAll">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" href="http://localhost:8080/viewAll">
                         View All Reports
                     </a>
                     <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByDate}">
@@ -50,7 +51,7 @@
                         Delete a Report
                     </a>
                     <hr class="navbar-divider">
-                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" th:href="@{logout}" class="navbar-item">
                         Log Out
                     </a>
                 </div>
@@ -71,14 +72,10 @@
         </div>
     </div>
 </nav>
-<div class="container text-center">
-    <h3 class="website-description-title">You have signed up successfully!</h3>
-    <div class="buttons m-3">
-        <a class="button is-light" th:href="@{/login}">
-            <strong>Login</strong>
-        </a>
-    </div>
-</div>
-
+<div class="box">
+<h1 class="website-section-title" style="padding-left: 420px;">Report Not Found!</h1>
+    <button class="button is-primary" style="margin-top: 10px; margin-left: 250px;" th:href="@{/updateByTitle}">
+    Try Again
+    </button>
 </body>
 </html>
