@@ -1,7 +1,6 @@
 package com.example.BringMeToJustice;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -132,4 +131,27 @@ public class AppController {
 
         return "redirect:/";
     }
+
+    @GetMapping("/deleteByTitle")
+    public String deletingRecordByTitle() {
+        return "deleteByTitle";
+    }
+
+    @GetMapping("/found_delete_report")
+    public String deletedByTitlePage(@RequestParam(name = "title", required = false) String title, Model model) {
+        if (title != null) {
+            model.addAttribute("record", recordsRepo.findByTitle(title));
+        } else {
+            return "record_not_exist";
+        }
+        System.out.println(title);
+        System.out.println(recordsRepo.findByTitle(title));
+        return "found_delete_report";
+    }
+    @RequestMapping(value ="/delete/{title}", method = RequestMethod.POST)
+    public String deletedRecord(@PathVariable("title") String title){
+        recordsRepo.delete(recordsRepo.findByTitle(title));
+        return "redirect:/";
+    }
+
 }

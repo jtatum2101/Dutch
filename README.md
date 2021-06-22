@@ -1,5 +1,5 @@
-# Husky
-## Husky (Crime Record Management System)
+# Dutch
+## Dutch (Crime Record Management System)
 
 ## MileStone 0 (6/9): 
 - The proposal will describe what the project is made for, and the many features that the project can do.

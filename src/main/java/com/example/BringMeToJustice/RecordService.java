@@ -11,7 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class RecordService {
     @Autowired
     private RecordsRepo repo;
-
+    public Records findByTitle(String title){
+        if(title != null){
+            return repo.findByTitle(title);
+        }
+        return null;
+    }
     public List<Records> listAll() {
         return repo.findAll();
     }
@@ -77,8 +82,8 @@ public class RecordService {
 
     }
 
-    public int deleteByTitle(String title) {
-        return repo.deleteByTitle(title);
+    public void deleteByTitle(String title) {
+        repo.deleteByTitle(title);
     }
 
 }
