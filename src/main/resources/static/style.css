@@ -123,3 +123,10 @@ padding-top: 15px;
 height: auto;
 }
 
+.navbar-item img {
+
+    max-height: 3rem;
+    max-width: 3rem;
+
+}
+
