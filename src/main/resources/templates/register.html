@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <link type="text/css" href="style.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
@@ -22,9 +22,42 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="http://localhost:8080">
+            <a class="navbar-item" href="http://localhost:8080" style="margin-top: 10px;">
                 Home
             </a>
+            <div sec:authorize="isAuthenticated()" class="navbar-item has-dropdown is-hoverable" style="margin-top: 10px;">
+                <a class="navbar-link">
+                    <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+                </a>
+
+                <div sec:authorize="isAuthenticated()" class="navbar-dropdown">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" href="/users">
+                        View users
+                    </a>
+                    <a class="navbar-item" href="http://localhost:8080/new">
+                        Create a Report
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" href="http://localhost:8080/viewAll">
+                        View All Reports
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByDate}">
+                        View by Date
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByReportNum}">
+                        View by Report Number
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/updateByTitle}">
+                        Update a Report
+                    </a>
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/deleteByTitle}">
+                        Delete a Report
+                    </a>
+                    <hr class="navbar-divider">
+                    <a sec:authorize="isAuthenticated()" th:href="@{logout}" class="navbar-item">
+                        Log Out
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="navbar-end">
