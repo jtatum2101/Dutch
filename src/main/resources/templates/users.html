@@ -23,10 +23,12 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a sec:authorize="isAuthenticated()" class="navbar-item" href="http://localhost:8080/home" style="margin-top: 10px;">
+            <a sec:authorize="isAuthenticated()" class="navbar-item" href="http://localhost:8080/home"
+               style="margin-top: 10px;">
                 Home
             </a>
-            <div sec:authorize="isAuthenticated()" class="navbar-item has-dropdown is-hoverable" style="margin-top: 10px;">
+            <div sec:authorize="isAuthenticated()" class="navbar-item has-dropdown is-hoverable"
+                 style="margin-top: 10px;">
                 <a class="navbar-link">
                     <b>[[${#request.userPrincipal.principal.fullName}]]</b>
                 </a>
@@ -53,32 +55,37 @@
                     <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/deleteByTitle}">
                         Delete a Report
                     </a>
+                    <hr class="navbar-divider">
+                    <a sec:authorize="isAuthenticated()" th:href="@{logout}" class="navbar-item">
+                        Log Out
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
-<div>
-    <h1 class="website-section-title" style="padding-left: 420px;">List of Users</h1>
-</div>
+<div class="table is-narrowed is-bordered" align="center" style="margin-top:150px;">
+    <div class="table-container is-narrowed" align="center">
+        <h1 class="website-section-title" align="center" style="padding-left: 325px;padding-right: 350px;">List Of Users</h1>
+        <br/><br/>
 
-<div>
-    <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
-        <tr>
-            <th>E-mail</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="user: ${listUsers}">
-            <td th:text="${user.email}">E-mail</td>
-            <td th:text="${user.firstName}">First Name</td>
-            <td th:text="${user.lastName}">Last Name</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+        <div>
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>E-mail</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user: ${listUsers}">
+                    <td th:text="${user.email}">E-mail</td>
+                    <td th:text="${user.firstName}">First Name</td>
+                    <td th:text="${user.lastName}">Last Name</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 </body>
 </html>
