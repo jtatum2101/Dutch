@@ -37,19 +37,19 @@
                     <a sec:authorize="isAuthenticated()" class="navbar-item" href="/users">
                         View users
                     </a>
-                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                    <a class="navbar-item" href="http://localhost:8080/new">
                         Create a Report
                     </a>
-                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" href="http://localhost:8080/viewAll">
                         View All Reports
                     </a>
-                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByDate}">
                         View by Date
                     </a>
-                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/searchByReportNum}">
                         View by Report Number
                     </a>
-                    <a sec:authorize="isAuthenticated()" class="navbar-item">
+                    <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/updateByTitle}">
                         Update a Report
                     </a>
                     <a sec:authorize="isAuthenticated()" class="navbar-item" th:href="@{/deleteByTitle}">
@@ -66,7 +66,8 @@
 </nav>
 <div class="table is-narrowed is-bordered" align="center" style="margin-top:150px;">
     <div class="table-container is-narrowed" align="center">
-        <h1 class="website-section-title" align="center" style="padding-left: 325px;padding-right: 350px;">List Of Users</h1>
+        <h1 class="website-section-title" align="center" style="padding-left: 325px;padding-right: 350px;">List Of
+            Users</h1>
         <br/><br/>
 
         <div>
