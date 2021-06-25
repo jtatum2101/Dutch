@@ -8,7 +8,7 @@
 ### Things to get done during this time period:
 - The user will be Welcomed with the home page, describing what the website is for.
 - The user will be revealed a navbar that will change when the user has an account and is logged in. 
-- I will also add css to make the Welcome Page look more presentable.</li>
+- I will also add css to make the Welcome Page look more presentable.
 ## MileStone 2 (6/18): 
 ### Things to get done during this time period:
 - There will be a database that holds the user's information.
@@ -30,11 +30,9 @@
 ## MileStone 4 (7/2): 
 ### Things to get done during this time period:
 - The user will be able to input multiple suspect if there is more than one.
-- The user can use this if they are police and want to file a report.
-- Another feature is that only the user that created the report can delete the report. 
+- The user can use this if they are police and want to file a report. 
 - However, every user can update the report.
 - Every user can view all reports or reports by date and report number.
-- The user can also describe the victim by hair color, eye color, sex, and race.
-- The user can also describe the suspect(s) by hair color, eye color, sex, and race.
+- The user can also describe the suspect(s) by name, hair color, eye color, and ethnicity.
 - The user can also describe the warrant if the suspect(s) has any warrants.
 - The website can be used as an alternative to file reports and manage those reports.
