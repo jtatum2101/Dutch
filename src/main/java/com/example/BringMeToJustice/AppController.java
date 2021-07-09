@@ -152,7 +152,7 @@ public class AppController {
     @RequestMapping(value ="/delete/{title}", method = RequestMethod.POST)
     public String deletedRecord(@PathVariable("title") String title){
         recordsRepo.delete(recordsRepo.findByTitle(title));
-        return "redirect:/";
+        return "redirect:/home";
     }
 
 }
