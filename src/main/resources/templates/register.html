@@ -22,7 +22,7 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="http://localhost:8080" style="margin-top: 10px;">
+            <a class="navbar-item" sec:authorize="isAuthenticated()" href="http://localhost:8080" style="margin-top: 10px;">
                 Home
             </a>
             <div sec:authorize="isAuthenticated()" class="navbar-item has-dropdown is-hoverable" style="margin-top: 10px;">
