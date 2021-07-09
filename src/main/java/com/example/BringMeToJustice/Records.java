@@ -399,4 +399,48 @@ public class Records {
         this.descriptionOfReport = descriptionOfReport;
     }
 
+    @Override
+    public String toString() {
+        return "Records{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", date='" + date + '\'' +
+                ", reportNumber=" + reportNumber +
+                ", victimName='" + victimName + '\'' +
+                ", hasSuspect=" + hasSuspect +
+                ", suspect1Name='" + suspect1Name + '\'' +
+                ", suspect1Hair='" + suspect1Hair + '\'' +
+                ", suspect1Eye='" + suspect1Eye + '\'' +
+                ", suspect1Race='" + suspect1Race + '\'' +
+                ", suspect2Name='" + suspect2Name + '\'' +
+                ", suspect2Hair='" + suspect2Hair + '\'' +
+                ", suspect2Eye='" + suspect2Eye + '\'' +
+                ", suspect2Race='" + suspect2Race + '\'' +
+                ", suspect3Name='" + suspect3Name + '\'' +
+                ", suspect3Hair='" + suspect3Hair + '\'' +
+                ", suspect3Eye='" + suspect3Eye + '\'' +
+                ", suspect3Race='" + suspect3Race + '\'' +
+                ", suspect4Name='" + suspect4Name + '\'' +
+                ", suspect4Hair='" + suspect4Hair + '\'' +
+                ", suspect4Eye='" + suspect4Eye + '\'' +
+                ", suspect4Race='" + suspect4Race + '\'' +
+                ", suspect5Name='" + suspect5Name + '\'' +
+                ", suspect5Hair='" + suspect5Hair + '\'' +
+                ", suspect5Eye='" + suspect5Eye + '\'' +
+                ", suspect5Race='" + suspect5Race + '\'' +
+                ", hasWarrants=" + hasWarrants +
+                ", whoHasWarrants='" + whoHasWarrants + '\'' +
+                ", suspect1WarrantDate='" + suspect1WarrantDate + '\'' +
+                ", suspect1WarrantDescription='" + suspect1WarrantDescription + '\'' +
+                ", suspect2WarrantDate='" + suspect2WarrantDate + '\'' +
+                ", suspect2WarrantDescription='" + suspect2WarrantDescription + '\'' +
+                ", suspect3WarrantDate='" + suspect3WarrantDate + '\'' +
+                ", suspect3WarrantDescription='" + suspect3WarrantDescription + '\'' +
+                ", suspect4WarrantDate='" + suspect4WarrantDate + '\'' +
+                ", suspect4WarrantDescription='" + suspect4WarrantDescription + '\'' +
+                ", suspect5WarrantDate='" + suspect5WarrantDate + '\'' +
+                ", suspect5WarrantDescription='" + suspect5WarrantDescription + '\'' +
+                ", descriptionOfReport='" + descriptionOfReport + '\'' +
+                '}';
+    }
 }

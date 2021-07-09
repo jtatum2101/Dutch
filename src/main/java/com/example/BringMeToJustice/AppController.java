@@ -70,6 +70,7 @@ public class AppController {
     @GetMapping("{title}/details")
     public String getRecordByTitle(@PathVariable("title") String title, Model model) {
         Records record = recordsRepo.findByTitle(title);
+        System.out.println(record);
         model.addAttribute("record", record);
         return "record_details";
     }
